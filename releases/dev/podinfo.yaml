@@ -14,7 +14,7 @@ spec:
     path: charts/podinfo
     ref: master
   values:
-    image: windscar/podinfo:dev-234
+    image: windscar/podinfo:dev-abc
     replicaCount: 1
     hpa:
       enabled: false
