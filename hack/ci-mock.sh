@@ -3,8 +3,9 @@
 repository="stefanprodan/podinfo"
 branch="master"
 version=""
-commit=$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1 | awk '{print tolower($0)}')
-
+echo "whats happening"
+commit='234'
+echo "whats happening"
 while getopts :r:b:v: o; do
     case "${o}" in
         r)
