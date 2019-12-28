@@ -3,9 +3,9 @@
 repository="stefanprodan/podinfo"
 branch="master"
 version=""
-echo "whats happening"
-commit='234'
-echo "whats happening"
+commit=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 | awk '{print tolower($0)}')
+
+
 while getopts :r:b:v: o; do
     case "${o}" in
         r)
@@ -33,3 +33,4 @@ echo ">>>> Building image ${image} <<<<"
 docker build --build-arg GITCOMMIT=${commit} --build-arg VERSION=${version} -t ${image} -f Dockerfile.ci .
 
 docker push ${image}
+© 2019 GitHub, Inc.
